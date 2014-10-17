@@ -1,0 +1,114 @@
+.form-control {
+  border-radius: 0;
+}
+
+.navbar-back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.content {
+  background-color: #efefef;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-box-pack: center;
+  box-pack: center;
+  
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-box-align: center;
+  box-align: center;
+  
+  display: -webkit-flexbox;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  
+  -webkit-flex-align: center;
+  -moz-flex-align: center;
+  -ms-flex-line-pack: center;
+  -ms-flex-pack: center;
+  
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;  
+  
+  -webkit-align-content: center;
+  -moz-align-content: center;
+  -ms-align-content: center;
+  align-content: center;
+  
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  
+  -webkit-flex: auto;
+  -moz-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  
+  -webkit-flex-flow: column;
+  -moz-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+}
+
+.col-middle {
+  width: 50%;
+  float: left;
+}
+
+.center {
+  padding: 10px;
+}
+
+.btn {
+  border-radius: 0;
+}
+.btn-danger{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.btn-success{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.btn-muzz{
+  background-color: #e22a30;
+  border: none;
+  border-radius: 5px;
+}
+
+.image-thing{
+  text-align: center;
+}
+.image-thing img{
+  border-radius: 999px;
+  width: 40%;
+  height: auto;
+}
+
+.form-control{
+  border-radius: 5px;
+}

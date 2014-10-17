@@ -1,0 +1,41 @@
+{
+  "name": "muzzley-idk",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "author": {
+    "name": "Filipe Pinheiro",
+    "email": "filipe.pinheiro@muzzley.com"
+  },
+  "scripts": {
+    "start": "NODE_PATH=. node index.js",
+    "test": "NODE_PATH=. node node_modules/.bin/lab -c"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "async": "^0.9.0",
+    "boom": "^2.4.1",
+    "bunyan": "^0.22.3",
+    "convict": "https://github.com/muzzley/node-convict/tarball/master",
+    "crumb": "^2.2.0",
+    "d3": "^3.4.9",
+    "hapi": "^6.0.2",
+    "hapi-auth-hawk": "^1.1.0",
+    "hawk": "^2.2.1",
+    "joi": "^4.5.0",
+    "lodash": "^2.4.1",
+    "phantom": "^0.6.4",
+    "redis": "^0.10.3",
+    "request": "^2.36.0",
+    "swig": "^1.3.2"
+  },
+  "devDependencies": {
+    "hapi": "^6.0.2",
+    "cheerio": "^0.16.0",
+    "jshint": "^2.5.1",
+    "lab": "^3.2.1",
+    "nock": "^0.32.3",
+    "precommit-hook": "^1.0.2",
+    "sinon": "^1.10.0"
+  }
+}

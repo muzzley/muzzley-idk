@@ -1,0 +1,6 @@
+{
+  "name": "images-plugin",
+  "version": "0.1.0",
+  "description": "Manager public assets",
+  "main": "index.js"
+}
