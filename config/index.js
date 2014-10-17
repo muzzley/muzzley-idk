@@ -32,7 +32,7 @@ var c = convict({
       host: {
         doc: 'The host where the muzzley api is available.',
         format: String,
-        default: 'channel-api.office.muzzley.com',
+        default: 'channels.muzzley.com',
         env: 'API_MUZZLEY_HOST'
       },
       port: {
