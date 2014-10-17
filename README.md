@@ -1,6 +1,6 @@
 # Muzzley IDK
 
-This package gives you the ***right*** tool belt to build managers that runs in Muzzley ecosystem
+This package gives you the right tool belt to build managers that runs in Muzzley ecosystem.
 
 ##### Pst! Pst! IDK stands for Integration Development Kit
 
