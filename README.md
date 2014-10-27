@@ -70,10 +70,6 @@ For more information, please see [node-bunyan repository](https://github.com/tre
 
 ### Storage
 
-This is a Storage helper 
-
-(Need cooler explanation and how to use)
-
 #### Example usage
 
 ```javascript
