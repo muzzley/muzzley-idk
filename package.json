@@ -1,7 +1,7 @@
 {
   "name": "muzzley-idk",
-  "version": "0.1.4",
-  "description": "This package gives you the right tool belt to build managers that runs in Muzzley ecosystem.",
+  "version": "0.1.6",
+  "description": "This package gives you the right tool belt to build managers that run in Muzzley ecosystem.",
   "main": "index.js",
   "author": {
     "name": "Filipe Pinheiro",
