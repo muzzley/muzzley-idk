@@ -1,6 +1,6 @@
 {
   "name": "muzzley-idk",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "This package gives you the right tool belt to build managers that run in Muzzley ecosystem.",
   "main": "index.js",
   "author": {
