@@ -26,6 +26,7 @@
     "hawk": "^2.2.1",
     "joi": "^4.5.0",
     "lodash": "^2.4.1",
+    "merge-descriptors": "0.0.2",
     "phantom": "^0.6.4",
     "redis": "^0.10.3",
     "request": "^2.36.0",
