@@ -1,8 +1,6 @@
 # Muzzley IDK
 
-This package gives you the right tool belt to build managers that runs in Muzzley ecosystem.
-
-##### Pst! Pst! IDK stands for Integration Development Kit
+This module gives you the tool belt to start building managers for the muzzley ecosystem.
 
 ## Installation
 
@@ -12,7 +10,7 @@ To install just run the following command in your terminal
 npm i muzzley-idk --save
 ```
 
-We recommend you, to use our yeoman generator to generate the boilerplate needed to build a manager, go take a peek [here](https://github.com/muzzley/generator-muzzley-manager) 
+We recommend you, to use our yeoman generator to generate the boilerplate needed to build a manager, go take a peek [here](https://github.com/muzzley/generator-muzzley-manager)
 
 ## What is under the hood?
 This tool belt brings 2 important logic components to ease your pain, those are `Helpers` and `Plugins`
@@ -25,7 +23,7 @@ Currently there are the following helpers
 ### Api
 This helpers let you access our Api endpoints easily, abstracting and removing unnecessary patterns, like for e.g. endpoint authentication, each time you try to access.
 
-For more information about this endpoints, please read [Muzzley Api Documentation](https://www.muzzley.com/documentation/integration/muzzley-api.html#api_endpoints) 
+For more information about this endpoints, please read [Muzzley Api Documentation](https://www.muzzley.com/documentation/integration/muzzley-api.html#api_endpoints)
 
 #### Methods
 
@@ -49,7 +47,7 @@ For more information about this endpoints, please read [Muzzley Api Documentatio
     photoUrl: 'http://https://muzzley.com/documentation/img/Logo.png'
   }], function (err) {
       ...
-  }); 
+  });
 ```
 
 ### Logger
@@ -62,9 +60,9 @@ For more information, please see [node-bunyan repository](https://github.com/tre
 ```javascript
   var config = require('config');
   var Logger = require('muzzley-idk').helpers.Logger;
-  
+
   var log = Logger(config.bunyan);
-  
+
   log.debug('Just debugging');
 ```
 
@@ -74,7 +72,7 @@ For more information, please see [node-bunyan repository](https://github.com/tre
 
 ```javascript
     var storage = require('muzzley-idk').helpers.Storage.getDefault();
-    
+
     storage.client().get('key', function (err, result) {
       ...
     });
@@ -118,12 +116,12 @@ Now lets get more in-depth on how to use and extend our *pre cooked* plugins, wh
  we normally split the logic of the plugin in 2 files, `index.js` and `handlers.js`, inside a directory with the name of the plugin,
  you can see some code examples in [`samples/plugins`](samples/plugins)
 
-### Auth* 
+### Auth*
 
 The `auth` plugin has two purposes, render the authentication page and
 the authorization page.
 
-By default the authentication urls are mounted on the root of the server if you want to mount them on another base path, 
+By default the authentication urls are mounted on the root of the server if you want to mount them on another base path,
 you can pass the `options.route.prefix` to mount in another base path, you can see that being done in [`samples/plugins/auth/index.js`](samples/plugins/auth/index.js)
 
 #### Options
@@ -249,7 +247,7 @@ The channels reply should be an array of channels such as this:
 
 
 ### Images*
-This plugin expose an image directory, inside your project directory to the web server, so it can be accessed through http, normally, should be something like `public/images/` 
+This plugin expose an image directory, inside your project directory to the web server, so it can be accessed through http, normally, should be something like `public/images/`
 
 After you register the plugin you can access the directory from `http://[hostname:port]/images/`
 

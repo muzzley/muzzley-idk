@@ -16,6 +16,8 @@
     "async": "^0.9.0",
     "boom": "^2.4.1",
     "bunyan": "^0.22.3",
+    "callsite": "^1.0.0",
+    "chalk": "^0.5.1",
     "clean-obj": "^0.1.2",
     "convict": "https://github.com/muzzley/node-convict/tarball/master",
     "crumb": "^2.2.0",
