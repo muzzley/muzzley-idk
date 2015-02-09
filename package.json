@@ -11,7 +11,7 @@
     {
       "name": "Ricardo Barros",
       "email": "ricardo.barros@muzzley.com"
-    },
+    }
   ],
   "scripts": {
     "start": "NODE_PATH=. node index.js",
