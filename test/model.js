@@ -1,4 +1,4 @@
-/* global describe, it, before */
+/* global describe, it, before, after */
 var expect = require('expect.js');
 var Model = require('../lib/helpers/Model');
 var Storage = require('../lib/helpers/Storage');
@@ -111,9 +111,7 @@ describe('Helpers # Model', function () {
 
       describe('person.save', function () {
         it('Should save on redis the newly created instance', function (done) {
-          person.save(function (err) {
-            done(err);
-          });
+          person.save(done);
         });
       });
 
@@ -128,6 +126,61 @@ describe('Helpers # Model', function () {
             // but with the instance returned
             // from the callback
             personModelDataIntegrety(personGet, done);
+          });
+
+          describe('Change property name', function () {
+            it('Should save the person object edited', function (done) {
+              person.name = 'Sup!';
+
+              person.save(function (err) {
+                if (err) {
+                  return done(err);
+                }
+
+                Person.get({id: 1337}, function (err, person) {
+                  if (err) {
+                    return done(err);
+                  }
+
+                  expect(person.name).to.be('Sup!');
+
+                  return done();
+                });
+              });
+            });
+          });
+
+          describe('Change str to int the property name', function () {
+            it('Should save and convert 8888 to str', function (done) {
+              person.name = 8888;
+              person.save(function (err) {
+                if (err) {
+                  return done(err);
+                }
+
+                Person.get({id: 1337}, function (err, person) {
+                  if (err) {
+                    return done(err);
+                  }
+
+                  expect(person.name).to.be('8888');
+
+                  return done();
+                });
+              });
+            });
+          });
+
+          describe('Try to change boolean to str the property flag', function () {
+            it('Should return an error on the callback of .save', function (done) {
+              person.flag = 'testinnng';
+
+              person.save(function (err) {
+                expect(err).to.be.an(Error);
+
+                return done();
+              });
+            });
           });
         });
 
