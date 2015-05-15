@@ -1,4 +1,4 @@
-/* global describe, it, before, after */
+/* global describe, it, before */
 var expect = require('expect.js');
 var Model = require('../lib/helpers/Model');
 var Storage = require('../lib/helpers/Storage');
@@ -36,6 +36,27 @@ describe('Helpers # Model', function () {
     if (cb) {
       return cb();
     }
+  };
+
+  var createPerson = function (opts) {
+    var person = new Person({
+      id: 1337,
+      name: 'Testing!!',
+      flag: true,
+      freeObj: {
+        say: 'hello'
+      },
+      obj: {
+        id: 1111,
+        name: 'Testing while testing!',
+        flag: false,
+        freeObj: {
+          say: 'bye'
+        }
+      }
+    }, opts);
+
+    return person;
   };
 
   // Clean up
@@ -88,26 +109,14 @@ describe('Helpers # Model', function () {
       expect(key).to.match(/person/);
     });
 
-    it('Should create a new instance of Person Model', function () {
-      var person = new Person({
-        id: 1337,
-        name: 'Testing!!',
-        flag: true,
-        freeObj: {
-          say: 'hello'
-        },
-        obj: {
-          id: 1111,
-          name: 'Testing while testing!',
-          flag: false,
-          freeObj: {
-            say: 'bye'
-          }
-        }
-      });
+    it('Should create a new instance of Person Model (strict: on, enforce: on)', function () {
+      var person = createPerson();
 
       // Invoke integrety tests on person
       personModelDataIntegrety(person);
+
+      expect(person.__settings__.strict).to.be(true);
+      expect(person.__settings__.enforce).to.be(true);
 
       describe('person.save', function () {
         it('Should save on redis the newly created instance', function (done) {
@@ -206,6 +215,20 @@ describe('Helpers # Model', function () {
           });
         });
       });
+    });
+
+    it('Should create a new instance of Person Model (strict: off, enforce: on)', function () {
+      var person = createPerson({ strict: false });
+
+      expect(person.__settings__.strict).to.be(false);
+      expect(person.__settings__.enforce).to.be(true);
+    });
+
+    it('Should create a new instance of Person Model (strict: off, enforce: off)', function () {
+      var person = createPerson({ strict: false, enforce: false });
+
+      expect(person.__settings__.strict).to.be(false);
+      expect(person.__settings__.enforce).to.be(false);
     });
   });
 });
