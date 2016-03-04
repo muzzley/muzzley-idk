@@ -3,11 +3,8 @@ var config = require('config');
 var plugins = require('manager-framework').plugins;
 var handlers = require('./handlers');
 
-
 var plugin = {
-
   plugin: {
-
     plugin: plugins.auth,
 
     options: {
@@ -16,8 +13,8 @@ var plugin = {
         title: 'DemoThing:login',
         subtitle: 'Insert your account details',
         label: 'Sign in',
-        inputs:  {
-          'email': { type: 'text',  placeholder: 'Email' },
+        inputs: {
+          'email': { type: 'text', placeholder: 'Email' },
           'password': { type: 'password', placeholder: 'Password' }
         },
         config: {
@@ -45,6 +42,5 @@ var plugin = {
     }
   }
 };
-
 
 module.exports = plugin;

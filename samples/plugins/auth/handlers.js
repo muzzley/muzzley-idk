@@ -10,12 +10,12 @@ handlers.login = function (request, reply) {
   var provider = new Provider({muzzleyId: request.query.user});
 
   // Authenticate and add token
-  provider.addToken(request.payload.email, request.payload.password, function(err, credentials) {
+  provider.addToken(request.payload.email, request.payload.password, function (err, credentials) {
     if (err) {
       return reply(Boom.badRequest('an error occurred, please try again later'));
     }
 
-    if(!credentials) {
+    if (!credentials) {
       return reply(Boom.badRequest('Invalid user credentials'));
     }
 
@@ -24,29 +24,26 @@ handlers.login = function (request, reply) {
 };
 
 handlers.authorization = function (request, reply) {
-
   var provider = new Provider({
-    muzzleyId : request.query.user,
+    muzzleyId: request.query.user,
     providerId: request.query.providerId
   });
 
   // If user didn't allow
   if (!request.payload || !request.payload.choice || request.payload.choice != 'permit') {
-
     // Delete user token
     provider.removeToken(function () {
       return reply().redirect(config.muzzley.api.url + '/authorization?success=false');
     });
-  }
-  // If user allowed
-  else {
+  } else {
+    // If user allowed
     // Get all devices/channels and stores them
     provider.storeAllChannels(function (err) {
-      if(err) {
+      if (err) {
         return reply().redirect(config.muzzley.api.url + '/authorization?success=false');
       }
 
-      return reply().redirect(config.muzzley.api.url + '/authorization?success=true&user=' + request.query.user );
+      return reply().redirect(config.muzzley.api.url + '/authorization?success=true&user=' + request.query.user);
     });
   }
 };

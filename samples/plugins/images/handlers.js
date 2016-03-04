@@ -10,5 +10,4 @@ handlers.images = function () {
   };
 };
 
-
 module.exports = handlers;

@@ -47,7 +47,7 @@ var c = convict({
     doc: 'The bunyan logger configuration.',
     format: Object,
     default: {
-      name: require('../package.json').name,
+      name: require('../package.json').name
     }
   }
 });
@@ -57,9 +57,7 @@ var path = [__dirname, 'environments', env].join('/');
 try {
   var alternative = require(path);
   c.load(JSON.parse(JSON.stringify(alternative)));
-} catch (e) {
-
-}
+} catch (e) {}
 
 c.validate();
 exports = module.exports = c;

@@ -8,9 +8,8 @@ var plugin = {
       config: {
         handler: handlers.subscribe
       }
-    }  
+    }
   }
 };
-
 
 module.exports = plugin;
